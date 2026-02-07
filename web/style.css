@@ -1,0 +1,222 @@
+
+body {
+    background-color: #1a1a2e;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.container {
+    background: rgba(43, 44, 61, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    width: 90%;
+    max-width: 900px;
+    height: 90%;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    /* subtle border glow */
+    transition: box-shadow 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 12px 48px 0 rgba(76, 175, 80, 0.1);
+}
+
+
+header {
+    background: rgba(22, 33, 62, 0.9);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #00adb5;
+}
+
+
+#chat-history {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    scrollbar-width: thin;
+    scrollbar-color: #00adb5 #16213e;
+}
+
+#chat-history::-webkit-scrollbar {
+    width: 6px;
+}
+#chat-history::-webkit-scrollbar-thumb {
+    background-color: #00adb5;
+    border-radius: 4px;
+}
+#chat-history::-webkit-scrollbar-track {
+    background: #16213e;
+}
+
+
+.message {
+    padding: 10px 16px;
+    border-radius: 12px;
+    max-width: 70%;
+    word-wrap: break-word;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+
+.message.other {
+    align-self: flex-start;
+    background: #252a41;
+    color: #eeeeee;
+    border-bottom-left-radius: 2px;
+}
+
+
+.message.self {
+    align-self: flex-end;
+    background: linear-gradient(135deg, #00adb5, #007980);
+    color: #ffffff;
+    border-bottom-right-radius: 2px;
+    box-shadow: 0 4px 15px rgba(0, 173, 181, 0.3);
+}
+
+
+.message.system {
+    align-self: center;
+    background: rgba(255, 152, 0, 0.2);
+    border: 1px solid rgba(255, 152, 0, 0.4);
+    color: #ff9800;
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 6px 16px;
+}
+
+
+.sender-name {
+    font-size: 0.75rem;
+    margin-bottom: 4px;
+    opacity: 0.7;
+    display: block;
+    font-weight: 600;
+}
+
+
+footer {
+    padding: 16px;
+    background: rgba(22, 33, 62, 0.95);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    gap: 12px;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    background: #1a1a2e;
+    border: 1px solid #30344c;
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+    border-color: #00adb5;
+}
+
+button {
+    background: #00adb5;
+    color: white;
+    border: none;
+    padding: 0 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.1s, background 0.2s;
+}
+
+button:hover {
+    background: #00c4ce;
+}
+button:active {
+    transform: scale(0.96);
+}
+
+
+body.admin-body {
+    background-color: #0f0c0c;
+}
+.admin-badge {
+    background: #e53935;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    margin-left: 8px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+#login-modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal-content {
+    background: #252a41;
+    padding: 32px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.modal-content input {
+    display: block;
+    margin: 16px 0;
+    width: 250px;
+}
+
+.hidden {
+    display: none !important;
+}

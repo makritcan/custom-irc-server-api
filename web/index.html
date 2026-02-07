@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat | Anonim</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="user-body">
+
+    <div class="container" id="chat-interface">
+        <header>
+            <div style="display: flex; align-items: center;">
+                <h1>#genel</h1>
+                <span id="user-display" style="margin-left: 12px; font-size: 0.9rem; color: #aaa;">| Anonim</span>
+            </div>
+            <!-- Admin link removed to keep it cleaner, but could be there hidden -->
+        </header>
+
+        <div id="chat-history">
+            <!-- Messages go here -->
+            <div class="message system">
+                Sohbete hoşgeldiniz! Kimliğiniz gizli.
+            </div>
+        </div>
+
+        <footer>
+            <input type="text" id="message-input" placeholder="Mesajınızı yazın..." autocomplete="off">
+            <button id="send-btn">Gönder</button>
+        </footer>
+    </div>
+
+    <!-- No login modal needed for user panel -->
+    <script src="app.js"></script>
+</body>
+
+</html>
